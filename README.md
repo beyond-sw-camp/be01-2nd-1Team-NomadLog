@@ -53,7 +53,10 @@
 
 다양한 사람들과 함께 채팅하며 정보를 공유해봐요 :)  
 
-  
+<h2>:airplane:팀원 소개</h2>
+<div align=center>
+	<img src="https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/4087f048-7e9a-464a-92fb-79849b862ff8"/>
+</div>
 
 <h2>:airplane:프로젝트 기간</h2>
 12/18/23~01/17/24
