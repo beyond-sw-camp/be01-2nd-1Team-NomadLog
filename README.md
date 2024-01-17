@@ -333,6 +333,14 @@ https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/7e103
 
 <a href=https://youtu.be/nnAxKG7k-_E> 720p 보기 </a>
 
+<h2>:airplane: 개선사항</h2>
+
+|기능|내용|
+|------|---|
+|아이디 생성|아이디 영어로만 생성가능 설정 건|
+|게시글|게시글 DB에서 게시글 번호 증가 관련 건|
+|TDD|테스트 주도 개발을 통한 코드 작성 건|
+
 <h2>:airplane:회고 </h2>
 
  - 🦖이동혁 :  게시판이라고 해서 쉽게 봤다간 큰 코 다친다는 생각을 하였다. 간단한 CRUD를 코드로 구현하는 점도 이렇게 어렵구나라는 생각을 하게 되었다.
