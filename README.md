@@ -1,5 +1,5 @@
 
-![image](C:\Users\이동혁\Downloads\제목을-입력해주세요_-001.png)
+![image](https://velog.velcdn.com/images/ldh0308/post/03547d5b-2a9c-4035-9d60-563cc0fda82c/image.png)
 
 NomadLog
 1팀 - 이동혁, 이경민, 박민성, 박재린, 고라희
