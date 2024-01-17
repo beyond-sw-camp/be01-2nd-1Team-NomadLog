@@ -3,6 +3,7 @@
 
 ![image](https://img.shields.io/badge/mariadb-003545.svg?style=for-the-badge&logo=mariadb&logoColor=white)
 ![image](https://img.shields.io/badge/SpringBoot-6DB33F.svg?style=for-the-badge&logo=SpringBoot&logoColor=white)
+![image](https://img.shields.io/badge/apachemaven-6DB33F.svg?style=for-the-badge&logo=apachemaven&logoColor=white)
 
 NomadLog
 1팀 - 🦖이동혁, 🐙이경민, 🐋박민성, 🐰박재린, 🐥고라희
