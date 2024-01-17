@@ -97,6 +97,8 @@
 
 https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/7e103fc2-5876-473b-985f-3d6eb5744cf7
 
+<a href=https://youtu.be/nnAxKG7k-_E> 720p 보기 </a>
+
 <h2>:airplane:회고 </h2>
 
  - 🦖이동혁 :  
