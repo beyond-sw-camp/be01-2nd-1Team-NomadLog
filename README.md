@@ -82,7 +82,7 @@
 
 
 <p align="center">
-  <img src="https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/dfeb3db6-3c3c-43b9-bb60-6d3bb47c0ead" width="50" height="50">
+  <img src="https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/dfeb3db6-3c3c-43b9-bb60-6d3bb47c0ead" width="150" height="150">
 </p>
 
 ## - Entity Relationship Diagram (ERD)
