@@ -1,0 +1,25 @@
+# MariaDB setting
+server:
+  port: 8080
+  
+spring:
+  sql:
+    init:
+      platform: mariadb
+      encoding: UTF-8 
+      mode: always
+  datasource:
+#    url: jdbc:mariadb://localhost:3306/encorebbs
+    url: jdbc:mariadb://192.168.0.14:3306/encorebbs
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: gur0215
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+      
+# mybatis mapping
+# mapper.xml location
+mybatis:
+  config-location: classpath:/mybatis-config.xml
+  mapper-locations: classpath:/mapper/*.xml

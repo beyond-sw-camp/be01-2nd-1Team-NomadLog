@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{common/layout/defaultLayout}">
+<head>
+    <th:block layout:fragment="title">
+        <title>NomardLog | 회원가입</title>
+    </th:block>
+</head>
+
+<body>
+<th:block layout:fragment="content">
+    <div class="page-wrap join">
+        <div class="container">
+            <div class="main-title-area">
+                <h2 class="main-title">회원가입</h2>
+                <p class="sub-title">회원가입을 위해 아래 정보를 입력해주세요.</p>
+            </div>
+            <form action="/member/save" method="post">
+                <ul>
+                    <li class="mb-3">
+                        <div class="d-flex">
+                            <input type="text" class="form-control mr-2" name="memberId" placeholder="아이디" id="memberId" required/>
+                            <button type="button" onclick="idCheck()" class="btn btn-outline-secondary" style="width: 160px;margin-left:20px;">아이디 중복체크</button>
+                        </div>
+                    </li>
+                    <li class="mb-3">
+                        <input type="text" class="form-control" name="memberPassword" placeholder="비밀번호" required/>
+                    </li>
+                    <li class="mb-3">
+                        <input type="text" class="form-control"  name="memberName" placeholder="이름"/>
+                    </li>
+                    <li class="mb-3">
+                        <input type="text" class="form-control" name="memberEmail" placeholder="이메일" required/>
+                    </li>
+                    <li class="mb-3">
+                        <input type="text" class="form-control" name="memberAge" placeholder="나이"/>
+                    </li>
+                </ul>
+
+                <div class="d-grid gap-2 mt-5">
+                    <input type="submit" class="btn btn-primary " value="회원가입"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</th:block>
+
+<th:block layout:fragment="script">
+    <script th:inline="javascript">
+        const idCheck = () => {
+          const id = document.getElementById("memberId").value; // web에서 받은 값 저장
+          const checkResult = document.getElementById("check-result"); //
+          console.log("입력한 이메일", id); // 콘솔 확인용, 없어도 됨
+
+          $.ajax({
+              // 요청방식: post, url: "id-check", 데이터: 아이디
+              type: "post",
+              url: "/member/id-check",
+              data: {
+                  "memberId": id
+              },
+              success: function(res) {
+                  console.log("요청성공", res);
+                  if (res == "ok") {
+                      // console.log("사용가능한 아이디");
+                      // checkResult.style.color = "green";
+                      // checkResult.innerHTML = "사용가능한 아이디";
+                      alert("사용 가능한 아이디입니다.");
+                  } else {
+                      // console.log("이미 사용중인 아이디");
+                      // checkResult.style.color = "red";
+                      // checkResult.innerHTML = "이미 사용중인 아이디";
+                      alert("사용 불가능한 아이디입니다.");
+                  }
+              },
+              error: function(err) {
+                  console.log("에러발생", err); // console은 브라우저의 개발자 도구를 의미
+              }
+          });
+      }
+    </script>
+</th:block>
+</body>
+
+</html>

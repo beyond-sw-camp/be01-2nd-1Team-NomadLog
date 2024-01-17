@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Websocket ChatRoom</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <button onclick="goBack()">돌아가기</button>
+    </div>
+    <!--  <a href="#" onclick="history.go(-1); return false;"></a>-->
+</div>
+<div class="container" id="app" v-cloak>
+    <div>
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <label class="input-group-text">내용</label>
+        </div>
+        <input type="text" class="form-control" v-model="message" v-on:keypress.enter="sendMessage">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="button" @click="sendMessage">보내기</button>
+        </div>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item" v-for="message in messages">
+            {{message.sender}} - {{message.message}}
+        </li>
+    </ul>
+    <div></div>
+</div>
+<!-- JavaScript -->
+<script src="/webjars/vue/2.5.16/vue.min.js"></script>
+<script src="/webjars/axios/0.17.1/dist/axios.min.js"></script>
+<script src="/webjars/sockjs-client/1.1.2/sockjs.min.js"></script>
+<script src="/webjars/stomp-websocket/2.3.3-1/stomp.min.js"></script>
+<script>
+    //alert(document.title);
+    // websocket & stomp initialize
+    var sock = new SockJS("/ws/chat");
+    var ws = Stomp.over(sock);
+    var reconnect = 0;
+    // vue.js
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            bbsId: '',
+            room: {},
+            sender: '',
+            message: '',
+            messages: []
+        },
+        created() {
+            this.bbsId = Number(localStorage.getItem('wschat.bbsId'));
+            this.sender = localStorage.getItem('wschat.sender');
+            console.log("bbsId:", this.bbsId);
+            console.log("sender:", this.sender);
+            this.findRoom();
+        },
+
+        methods: {
+            findRoom: function () {
+                axios.get('/chat/room/' + this.bbsId).then(response => {
+                    this.room = response.data;
+                });
+            },
+            sendMessage: function () {
+                ws.send("/app/chat/message", {}, JSON.stringify({
+                    type: 'TALK',
+                    bbsId: this.bbsId,
+                    sender: this.sender,
+                    message: this.message
+                }));
+                this.message = '';
+            },
+            recvMessage: function (recv) {
+                this.messages.unshift({
+                    "type": recv.type,
+                    "sender": recv.type == 'ENTER' ? '[알림]' : recv.sender,
+                    "message": recv.message,
+                    "bbsId": recv.bbsId
+                })
+            },
+
+
+        }
+    });
+
+
+    // 예시: 클라이언트에서 WebSocket 주제 동적 설정 부분
+    function connect() {
+        // 채팅방 ID를 localStorage에서 가져오기
+        const chatbbsId = localStorage.getItem('wschat.bbsId');
+
+        // 채팅방 ID가 존재하면 WebSocket 주제 설정
+        if (chatbbsId) {
+            const websocketTopic = `/topic/chat/room/${chatbbsId}`;
+            const socket = new SockJS("/ws/chat");
+            const stompClient = Stomp.over(socket);
+
+            stompClient.connect({}, frame => {
+                stompClient.subscribe(websocketTopic, function (message) {
+                    var recv = JSON.parse(message.body);
+                    vm.recvMessage(recv);
+                });
+
+                // 채팅방에 입장 메시지 전송 등의 추가 작업 수행 가능
+                stompClient.send("/app/chat/message", {}, JSON.stringify({
+                    type: 'ENTER',
+                    bbsId: chatbbsId,
+                    sender: vm.$data.sender
+                }));
+            }, function (error) {
+                handleConnectionError(error);
+            });
+        } else {
+            console.error('채팅방 ID가 없습니다.');
+        }
+    }
+
+    function handleConnectionError(error) {
+        if (reconnect++ <= 5) {
+            setTimeout(function () {
+                console.log("connection reconnect");
+                sock = new SockJS("/ws/chat");
+                ws = Stomp.over(sock);
+                connect();
+            }, 10 * 1000);
+        }
+    }
+
+    // 초기 WebSocket 연결 설정
+    connect();
+
+
+    function goBack() {
+        console.log(1);
+        location.href = "/bbs/" + vm.$data.bbsId;
+    }
+
+
+</script>
+</body>
+</html>

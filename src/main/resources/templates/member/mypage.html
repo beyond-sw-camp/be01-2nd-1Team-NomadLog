@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+</head>
+<body>
+    <table class="table">
+        <thead>
+            <tr id="sector">
+                <th scope="col">제목</th>
+                <th scope="col">작성일</th>
+                <th scope="col">좋아요 수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="BbsDTO : ${loggedInMember}">
+                <td th:text="${BbsDTO.title}"></td>
+                <td th:text="${BbsDTO.createdAt}"></td>
+                <td th:text="${BbsDTO.viewCnt}"></td>
+                <td th:text="${BbsDTO.likeCnt}"></td>
+            </tr>
+        </tbody> 
+    </table>
+    
+    <a href="/member/update">내 정보 수정하기</a>
+    <a href="/member/delete">내 정보 삭제하기</a>
+    
+</body>
+</html>

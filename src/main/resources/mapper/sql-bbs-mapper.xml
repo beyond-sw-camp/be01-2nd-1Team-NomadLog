@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.encore.bbs.board.mapper.BbsMapper">
+    <select id="selectBbsList" resultType="BbsDTO">
+        SELECT *, member_id
+        FROM bbs b
+                 Join userstbl u on b.member_code = u.member_code
+        WHERE is_deleted = '0'
+        ORDER BY bbs_id DESC
+    </select>
+
+    <insert id="insertBbs" parameterType="BbsDTO" useGeneratedKeys="true" keyProperty="bbsId">
+        INSERT INTO bbs
+            (title, contents, created_at, country_id, member_code)
+        VALUES (#{title}, #{contents}, NOW(), #{countryId}, #{memberCode});
+    </insert>
+
+    <select id="selectBbsDetail" parameterType="int" resultType="BbsDTO">
+        <!-- select * from bbs WHERE bbs_id = #{bbsId} -->
+
+        SELECT *, c.continent_name, c.country_name
+        FROM bbs b
+        JOIN countries c ON b.country_id = c.country_id
+        WHERE bbs_id = #{bbs_id};
+    </select>
+
+    <update id="updateViewCount" parameterType="int">
+        UPDATE bbs
+        SET view_cnt = view_cnt + 1
+        WHERE bbs_id = #{bbsId}
+    </update>
+
+    <update id="updatedeleteBbs" parameterType="BbsDTO">
+        UPDATE bbs SET
+        title = #{title},
+        contents = #{contents},
+        country_id = #{countryId, jdbcType=INTEGER},<!-- jdbcType 추가 -->
+        member_code = #{memberCode, jdbcType=INTEGER}, <!-- jdbcType 추가 -->
+        modify_at = NOW()
+        WHERE
+        bbs_id=#{bbsId}
+    </update>
+
+    <update id="updateBbs" parameterType="BbsDTO">
+        UPDATE bbs SET
+        title = #{title},
+        contents = #{contents},
+        member_code = #{memberCode}, <!-- jdbcType 추가 , jdbcType=INTEGER -->
+        modify_at = NOW()
+        WHERE
+        bbs_id=#{bbsId}
+    </update>
+
+    <delete id="deleteBbs" parameterType="int">
+        DELETE
+        FROM bbs
+        WHERE bbs_id = #{bbsId}
+    </delete>
+
+    <insert id="insertHashtag" useGeneratedKeys="true" keyProperty="hashtagId"
+            parameterType="com.encore.bbs.board.dto.HashTag">
+        INSERT INTO hashtag(bbs_id, content)
+        VALUES (#{bbsId}, #{content});
+    </insert>
+
+    <!-- 최근 저장한 게시물 id-->
+    <select id="getLatestBbsId" parameterType="Long">
+        SELECT LAST_INSERT_ID()
+    </select>
+
+    <!--국가정보 넣기-->
+    <select id="getCountryList" resultType="com.encore.bbs.board.dto.CountryDto">
+        SELECT *
+        FROM countries;
+    </select>
+
+    <!-- 국가 불러오기-->
+    <select id="selectCountryBbs" parameterType="Long" resultType="com.encore.bbs.board.dto.CountryDto">
+        SELECT country_id
+        FROM countries
+        WHERE country_name = #{countryName};
+    </select>
+
+    <!--상세 게시글 국가정보 넣기-->
+    <select id="findCountryById" resultType="com.encore.bbs.board.dto.CountryDto">
+        SELECT b.country_id,
+               co.country_name,
+               co.continent_name
+        FROM bbs b
+                 JOIN countries co
+                      ON b.country_id = co.country_id
+        WHERE b.bbs_id = #{bbsId};
+    </select>
+
+    <select id="selectId" resultType="BbsDTO">
+        select *
+        from bbs
+        WHERE bbs_id = #{bbsId}
+    </select>
+
+    <select id="getHashtagList" resultType="com.encore.bbs.board.dto.HashTag">
+        select *
+        from hashtag
+        WHERE bbs_id = #{bbsId}
+    </select>
+
+
+</mapper>

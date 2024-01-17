@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.encore.bbs.comment.mapper.CommentMapper">
+
+    <resultMap id="commentResultMap" type="com.encore.bbs.comment.dto.CommentDTO">
+        <id column="comment_id" property="commentId"/>
+        <result column="bbs_id" property="bbsId"/>
+        <result column="content" property="content"/>
+        <result column="writer" property="writer"/>
+        <result column="reg_date" property="regDate"/>
+        <result column="modify_date" property="modifyDate"/>
+    </resultMap>
+
+
+    <!-- 댓글쓰기   -->
+    <insert id="addComment" parameterType="com.encore.bbs.comment.dto.CommentDTO">
+        INSERT INTO comment (bbs_id, content, writer, reg_date)
+        VALUES (#{bbsId}, #{content}, #{writer}, now() )
+    </insert>
+
+    <!-- 댓글id정보   -->
+    <select id="findCommentById" resultMap="commentResultMap">
+        SELECT * FROM comment WHERE bbs_id = #{bbsId}
+    </select>
+
+    <!--  조회  -->
+    <select id="getCommentsByBbsId" resultType="com.encore.bbs.comment.dto.CommentDTO">
+        SELECT * FROM comment WHERE bbs_id = #{bbsId}
+    </select>
+
+    <!-- 댓글수정 / 수정 버튼 생성 서비스 컨트롤러 붙여넣기  -->
+    <update id="updateComment" parameterType="com.encore.bbs.comment.dto.CommentDTO">
+        UPDATE comment SET countent = #{content}, modify_date = now()
+        WHERE comment_id = #{commentId}
+    </update>
+
+    <!-- 삭제   -->
+    <delete id="deleteComment" parameterType="com.encore.bbs.comment.dto.CommentDTO">
+        DELETE FROM comment WHERE comment_id = #{commentId}
+    </delete>
+
+    <!-- 댓글cnt   -->
+    <select id="countAllComments" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM comment
+    </select>
+</mapper>

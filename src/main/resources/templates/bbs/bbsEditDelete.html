@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>NomardLog | 게시글 수정, 삭제</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div class="container">
+    <h2>게시글 수정 화면</h2>
+    <form id="frm" method="post">
+        <table class="bbs_detail">
+            <colgroup>
+                <col width="15%"/>
+                <col width="35%"/>
+                <col width="15%"/>
+                <col width="35%"/>
+            </colgroup>
+            <caption>게시글 상세내용</caption>
+            <tbody>
+
+            <tr>
+                <th scope="row">글 번호</th>
+                <td th:text="${bbs.bbsId}"></td>
+                <th scope="row">조회수</th>
+                <td th:text="${bbs.viewCnt}"></td>
+            </tr>
+            <tr name="countryId" th:each="country : ${countrys}">
+                <!-- 각 대륙 국가 내용 출력 -->
+                <th scope="col">국 가</th>
+                <td th:text="${country.countryName}"></td>
+                <th scope="col">대 륙</th>
+                <td th:text="${country.continentName}"></td>
+            </tr>
+            <tr>
+                <th scope="row">작성자</th>
+                <td th:text="${bbs.memberCode}"></td>
+                <th scope="row">작성일</th>
+                <td th:text="${#temporals.format(bbs.createdAt, 'yyyy-MM-dd HH:mm:ss')}"></td>
+            </tr>
+            <tr>
+                <th scope="row">제목</th>
+                <td colspan="3">
+                    <input type="text" id="title" name="title" th:value="${bbs.title}"/></td>
+            </tr>
+            <tr>
+                <td colspan="4" class="view_text">
+                    <textarea title="내용" id="contents" name="contents" th:text="${bbs.contents}"></textarea>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <input type="hidden" id="bbsId" name="bbsId" th:value="${bbs.bbsId}"/>
+        <input type="hidden" id="memberCode" name="memberCode" th:value="${bbs.memberCode}">
+        <input type="hidden" id="method" name="_method" th:value="POST"/> <!--  th:value 수정함 -->
+
+    </form>
+
+    <a href="#this" id="list" class="btn">목록으로</a>
+    <a href="#this" id="edit" class="btn">저장</a>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var bbsId = $("#bbsId").val();
+
+        $("#list").on("click", function () {
+            location.href = "/bbs";
+        });
+
+        $("#edit").on("click", function () {
+            var frm = $("#frm")[0];
+            frm.action = "/bbs/update/" + bbsId;
+            frm.submit();
+
+        });
+
+    });
+</script>
+
+</body>
+</html>

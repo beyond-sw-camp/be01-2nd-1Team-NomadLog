@@ -1,0 +1,63 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{common/layout/defaultLayout}">
+<head>
+	<th:block layout:fragment="title">
+		<title>NomardLog | 글작성</title>
+	</th:block>
+</head>
+<body>
+<th:block layout:fragment="content">
+	<div class="page-wrap bbslist">
+		<div class="container">
+			<div class="main-title-area">
+				<h2 class="main-title">게시글 작성</h2>
+				<p class="sub-title">다양한 주제로 자유로운 소통을 해보세요.</p>
+			</div>
+
+			<form id="frm" name="frm" method="post" action="/bbs/write" enctype="multipart/form-data">
+				<table class="table">
+					<table class="table">
+						<tr>
+							<select name="countryId" class="form-select" aria-label="Default select example">
+								<option selected>국가를 선택하세요</option>
+								<option th:each="con : ${countryDtoList}"
+										th:value="${con.countryId}" th:text="${con.countryName}"></option> <!--value값 id로 바꿔보기-->
+							</select> <br>
+						</tr>
+					<tr>
+						<td class="fs-5">제목</td>
+						<td>
+							<input type="text" class="form-control" id="title" name="title" placeholder="제목을 입력해주세요.">
+						</td>
+					</tr>
+					<tr>
+						<td class="fs-5">내용</td>
+						<td colspan="2">
+							<textarea id="contents" class="form-control" name="contents" placeholder="내용을 입력해주세요." style="resize:none;"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td class="fs-5">해시태그</td>
+						<td colspan="2">
+							<textarea id="content" class="form-control" name="content" placeholder="해시태그를 입력해주세요." style="resize:none;"></textarea>
+						</td>
+					</tr>
+				</table>
+
+				<div class="d-grid gap-2 mt-5">
+                    <span th:if="${memberDTO != null}" th:text="${memberDTO.memberCode}"></span>
+                    <input type="hidden" id="memberCode" name="memberCode" th:value="${memberDTO.memberCode}">
+					<input type="submit" id="submit" value="저장" class="btn btn-primary">
+				</div>
+			</form>
+		</div>
+	</div>
+</th:block>
+<!--<th:block layout:fragment="script">
+	<script th:inline="javascript">
+		// 스크립트 내용
+	</script>
+</th:block>-->
+</body>
+</html>

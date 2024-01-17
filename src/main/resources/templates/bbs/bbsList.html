@@ -1,0 +1,75 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{common/layout/defaultLayout}">
+
+<head>
+	<th:block layout:fragment="title">
+		<title>NomardLog | 게시판</title>
+	</th:block>
+</head>
+
+<body>
+<th:block layout:fragment="content">
+	<div class="page-wrap bbslist">
+		<div class="container">
+			<div class="main-title-area">
+				<h2 class="main-title">게시판</h2>
+				<p class="sub-title">다양한 주제로 자유로운 소통을 해보세요.</p>
+			</div>
+
+			<table class="table table-striped table-hover">
+				<colgroup>
+					<col width="10%"/>
+					<col width="*"/>
+					<col width="15%"/>
+					<col width="20%"/>
+				</colgroup>
+				<thead>
+					<tr>
+						<th class="text-center" scope="col">글번호</th>
+						<th class="text-center" scope="col">제목</th>
+						<th class="text-center" scope="col">조회수</th>
+						<th class="text-center" scope="col">작성자</th>
+						<th class="text-center" scope="col">작성일</th>
+					</tr>
+				</thead>
+				<tbody class="table-group-divider">
+					<tr th:if="${#lists.size(list)} > 0" th:each="list : ${list}">
+						<td th:text="${list.bbsId}" class="text-center"></td>
+						<!-- 0103_상세화면 코드 추가 -->
+						<td class="title">
+							<a href="/bbs/"
+							   th:attrappend="href=${list.bbsId}"
+							   th:text="${list.title}"></a></td>
+						<!-- 0103_상세화면 코드 추가 -->
+						<td th:text="${list.viewCnt}" class="text-center"></td>
+						<td th:text="${list.memberId}" class="text-center"></td>
+						<td th:text="${#temporals.format(list.createdAt,'yyyy-MM-dd HH:mm:ss')}" class="text-center"></td>
+					</tr>
+					<tr th:unless="${#lists.size(list)} > 0">
+						<td colspan="4">조회된 결과가 없습니다.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="btn-area mt-6 d-flex align-items-end justify-content-end">
+				<a href="/bbs/write" class="btn btn-primary">글쓰기</a>
+			</div>
+		</div>
+	</div>
+</th:block>
+
+<th:block layout:fragment="script">
+	<script th:inline="javascript">
+		// 스크립트 내용
+	</script>
+</th:block>
+</body>
+
+</html>
+
+
+
+
+
+

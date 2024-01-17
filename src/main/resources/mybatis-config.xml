@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+ 
+ 	<settings>
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+    </settings>
+ 
+ 
+	<typeAliases>
+		<typeAlias type="com.encore.bbs.member.dto.MemberDTO"
+			alias="member"></typeAlias>
+		<typeAlias type="com.encore.bbs.board.dto.BbsDTO"
+			alias="bbsDto"></typeAlias>
+	</typeAliases>
+
+<!-- <typeHandlers>
+    <typeHandler handler="org.apache.ibatis.type.StringTypeHandler" />
+</typeHandlers> -->
+
+
+</configuration>
+
+
+
+   
+
+
+    

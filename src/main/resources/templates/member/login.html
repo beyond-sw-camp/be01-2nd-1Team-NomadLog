@@ -1,0 +1,50 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{common/layout/defaultLayout}">
+
+<head>
+    <th:block layout:fragment="title">
+        <title>NomardLog | 로그인</title>
+    </th:block>
+</head>
+
+<body>
+<th:block layout:fragment="content">
+    <div class="page-wrap login">
+        <div class="container">
+            <div class="login-box">
+                <form action="/member/login" method="post">
+                    <ul>
+                        <li>
+                            <label for="memberId" class="form-label">아이디</label>
+                            <input type="text" name="memberId" id="memberId" class="form-control" placeholder="아이디"/>
+                        </li>
+                        <li class="mt-2">
+                            <label for="memberPassword" class="form-label">비밀번호</label>
+                            <input type="password" name="memberPassword" id="memberPassword" class="form-control" placeholder="비밀번호"/>
+                        </li>
+                    </ul>
+                    <div class="d-grid gap-2 mt-5">
+                        <input type="submit" class="btn btn-primary" value="로그인"/>
+                        <p>아직 회원이 아니신가요? <a href="/member/save">회원가입</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</th:block>
+
+<th:block layout:fragment="script">
+    <script th:inline="javascript">
+        // 스크립트 내용
+    </script>
+</th:block>
+</body>
+
+</html>
+
+
+
+
+
+

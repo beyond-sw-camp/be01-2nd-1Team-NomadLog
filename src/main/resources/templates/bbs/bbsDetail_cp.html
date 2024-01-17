@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>bbs_detail</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<div class="container">
+    <h2 class="title">게시글 상세 화면</h2>
+    <form id="frm" method="post">
+        <table class="table table-striped">
+            <colgroup>
+                <col width="15%" />
+                <col width="35%" />
+                <col width="15%" />
+                <col width="35%" />
+            </colgroup>
+            <tbody>
+            <tr>
+                <th scope="row">글 번호</th>
+                <td th:text="${bbs.bbsId}"></td>
+                <th scope="row">조회수</th>
+                <td th:text="${bbs.viewCnt}"></td>
+            </tr>
+            <tr>
+                <th scope="row">작성자</th>
+                <td th:text="${memberDTO != null ? memberDTO.memberCode : 'id없음'}"></td>
+                <th scope="row">작성일</th>
+                <td th:text="${#temporals.format(bbs.createdAt, 'yyyy-MM-dd HH:mm:ss')}"></td>
+            <tr>
+                <th scope="row">제목</th>
+                <td colspan="3" th:text="${bbs.title}"></td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <span class="hidden">내용</span>
+                </th>
+                <td th:text="${bbs.contents}"></td>
+            </tr>
+            <tr th:each="country : ${country}">
+                <!-- 각 대륙 국가 내용 출력 -->
+                <th scope="col">국 가</th>
+                <td th:text="${country.countryName}"></td>
+                <th scope="col">대 륙</th>
+                <td th:text="${country.continentName}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <!-- 추가 -->
+        <input type="hidden" id="bbsId" name="bbsId" th:value="${bbs.bbsId}">	<!-- 여기서 아이디 받아서 저장-->
+        <input type="hidden" id="memberCode" name="memberCode" th:value="${memberDTO.memberCode}">
+        <input type="hidden" id="method" name="_method"/>
+
+    </form>
+
+    <a href="#this" id="list" class="btn">목록으로</a>
+    <a href="#this" id="edit" class="btn" th:if="${bbs != null and bbs.memberCode == loginId}">수정</a>
+    <a href="#this" id="delete" class="btn" th:if="${bbs != null and bbs.memberCode == loginId}">삭제</a>
+    <a href="#this" id="chatButton" class="btn" th:attr="data-bbsId=${bbs.bbsId}" th:onclick="enterChatRoom(this.getAttribute('data-bbsId'))">채팅하기</a>
+
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        var bbsId = $("#bbsId").val();
+
+        $("#list").on("click", function(){
+            location.href = "/bbs";
+        });
+
+        /* 		     	 $("#edit").on("click", function(){
+                                 location.href = "/bbs/update/detail";
+                      }); */
+
+
+        $("#edit").on("click", function(){
+            $("#method").val("put");
+            var frm = $("#frm")[0];
+            frm.action = "/bbs/update/detail/"+bbsId;
+            frm.submit();
+
+        });
+
+        $("#delete").on("click", function(){
+            $("#method").val("delete");
+            var frm = $("#frm")[0];
+            frm.action = "/bbs/"+bbsId;
+            frm.submit();
+        });
+    });
+
+</script>
+<!--  -->
+
+<div id="comment-Delete">
+    <form id="deleteCommentsForm" action="/comment/delete" method="post">
+        <input type="hidden" name="bbsId" id="bbsId" th:value="${bbs.bbsId.toString()}">
+        <table>
+            <thead>
+            <tr>
+                <th scope="row">작성자</th>
+                <th>내용</th>
+                <th>동작</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="comment : ${comments}">
+                <!-- 각 댓글의 내용 출력 -->
+                <td th:text="${comment.writer}"></td>
+                <td th:text="${comment.content}"></td>
+                <td>
+                    <!-- 버튼을 클릭하면 해당 댓글을 삭제하는 액션을 수행하도록 설정 -->
+                    <button type="submit" name="commentId" th:value="${comment.commentId}"
+                            th:if="${memberId != null and memberId.memberId == comment.writer}">댓글 삭제</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<!-- 댓글 작성 폼 -->
+<div id="comment-write">
+    <form id="commentForm" action="/comment/save" method="post">
+        <div>
+            <!-- bbsId를 전달하기 위한 hidden input 추가 -->
+            <input type="hidden" name="bbsId" id="bbsId" th:value="${bbs.bbsId.toString()}">
+        </div>
+        <div>
+            <!-- loginId가 null이면 로그인 페이지로 리다이렉션 -->
+            <input type="hidden" name="writer" id="writer" th:if="${loginId != null}" th:value="${memberId.memberId}">
+            <input type="hidden" name="writer" th:unless="${loginId != null}" th:value="Id없음">
+            <!-- 에러 발생하진 않는데 널값으로 넘어감. 뷰단 문제임. 프론트에서 해결할 문제 -->
+        </div>
+        <div>
+            <textarea  name="content" id="content" placeholder="내용" style="resize:none;"></textarea>
+            <!-- <button type="submit" id="comment-write-btn" th:if="${loginId != null}">댓글작성</button> -->
+            <button type="button" id="comment-write-btn" onclick="submitOrRedirect()">댓글작성</button>
+        </div>
+    </form>
+</div>
+</div>
+<script th:inline="javascript">
+    var loginId = [[${loginId}]]; // Make sure to replace 'null' with the actual loginId
+    function enterChatRoom(bbsId) {
+        console.log("Debug: bbsId =", bbsId);
+        if(loginId != null) {
+            var member = [[${member}]];
+            localStorage.setItem('wschat.sender',member);
+            localStorage.setItem('wschat.bbsId',bbsId);
+            location.href="/chat/room/enter/"+bbsId;
+        } else{
+            location.href="/member/login"
+        }
+    }
+
+    function submitOrRedirect() {
+        // Thymeleaf의 loginId 변수를 JavaScript 변수로 가져오기
+        var loginId = /*[[${loginId}]]*/ null;
+
+        if (loginId != null) {
+            // loginId가 존재하면 폼을 submit
+            document.getElementById("commentForm").submit(); // 폼의 id를 실제 폼의 id로 변경해야 합니다.
+        } else {
+            // loginId가 없으면 '/member/login'로 이동
+            window.location.href = '/member/login';
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.encore.bbs.member.mapper.MemberMapper">
+    <insert id="save" parameterType="member"> <!-- mybatis-config를 작성한 이유, com.blog.member.dto.MemberDTO로 써도 됨. MemberDTO에 저장된 변수 값을 불러오는 것 -->
+	<!-- parameterType="member"는 MemberDTO 객체를 전달받음. save()메서드에서 sql.insert("Member.save", memberDTO)로 쓰는 이유 -->
+        insert into usersTBL(member_code, member_id, member_password, member_name, member_email, member_age)
+        values (#{memberCode},#{memberId}, #{memberPassword}, #{memberName}, #{memberEmail},  #{memberAge})
+        <!-- #{}안 변수는 DTO 변수와 절대 달라서는 안된다.  -->
+    </insert>
+
+    <select id="login" parameterType="member" resultType="member">  
+    <!-- parameterType은 SQL쿼리에 전달할 내용물의 타입 resultType은 SQL 쿼리로 부터 전달받은 내용물의 타입-->
+    <!-- 조회결과를 위해 resultType 사용함. select에서는 항상 사용됨. 왜냐? 반환값을 받는 친구거든. 즉, resultType은 SQL 쿼리의 결과로 반환되는 레코드의 타입임. -->
+    	select * from usersTBL where member_id = #{memberId} and member_password = #{memberPassword}
+    </select>
+    <!-- 끌고 오는게 안되는 이유는 데이터 베이스에서 스네이크케이스라 그렇다. -->
+
+	<select id="findAllCode" parameterType="Integer" resultType="member">  
+    	select * from usersTBL where member_code = #{loginId}
+    </select>
+
+	<select id="code" parameterType="member" resultType="int">  
+    	select member_code from usersTBL where member_id = #{memberId} and member_password = #{memberPassword}
+    </select>
+
+	<select id="findId" parameterType="member" resultType="member">  
+    	select * from usersTBL where member_id = #{memberId}
+    </select>
+
+	<select id="findByIdBbs" parameterType="bbsDto" resultType="bbsDto"> 
+    	select title, created_at, view_cnt, like_cnt from bbs where member_code = #{loginId}
+    </select>
+    
+    <select id="findByInfo" parameterType="member" resultType="member">
+    	select * from usersTBL where member_code = #{loginId}
+    </select>
+    
+    <update id="update" parameterType="member">
+    	update usersTBL set member_email = #{memberEmail} , member_age = #{memberAge} where member_id = #{memberId} 
+    </update>
+    
+    <delete id="deleteMember" parameterType="member" >
+    	delete from usersTBL where member_code = #{loginId}
+    </delete>
+
+</mapper>
+
+
+
+
+
+
+
+
