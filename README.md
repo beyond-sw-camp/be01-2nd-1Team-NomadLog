@@ -149,7 +149,8 @@ CREATE TABLE `comment` (
 	`modify_date` TIMESTAMP NULL DEFAULT NULL,
 	PRIMARY KEY (`comment_id`) USING BTREE,
 	INDEX `bbs_id` (`bbs_id`) USING BTREE,
-	CONSTRAINT `bbs` FOREIGN KEY (`bbs_id`) REFERENCES `bbs` (`bbs_id`) ON UPDATE CASCADE ON DELETE CASCADE
+	CONSTRAINT `bbs` FOREIGN KEY (`bbs_id`) REFERENCES
+		`bbs` (`bbs_id`) ON UPDATE CASCADE ON DELETE CASCADE
 )
 COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB
@@ -177,7 +178,8 @@ CREATE TABLE `hashtag` (
 	`content` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb3_bin',
 	PRIMARY KEY (`hashtag_id`) USING BTREE,
 	INDEX `bbs_id` (`bbs_id`) USING BTREE,
-	CONSTRAINT `bbs_id` FOREIGN KEY (`bbs_id`) REFERENCES `bbs` (`bbs_id`) ON UPDATE CASCADE ON DELETE CASCADE
+	CONSTRAINT `bbs_id` FOREIGN KEY (`bbs_id`) REFERENCES
+		`bbs` (`bbs_id`) ON UPDATE CASCADE ON DELETE CASCADE
 )
 COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB
