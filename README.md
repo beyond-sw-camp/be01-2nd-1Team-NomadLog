@@ -66,7 +66,11 @@ NomadLog
 </p>
 
 <h2>:airplane: DB 모델링</h2>
-<h1>Entity Relationship Diagram (ER Diagram)</h1>
+
+<span style="font-size:200%"> Entity Relationship Diagram (ER Diagram)</span>
+ 
+
+  
 
 <p align="center" width="80%" height="80%">
   <img src="https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/dfeb3db6-3c3c-43b9-bb60-6d3bb47c0ead">
