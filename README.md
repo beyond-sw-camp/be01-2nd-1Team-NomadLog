@@ -93,6 +93,10 @@
 
 <h2>:airplane: 서비스별 주요 기능 소개</h2>
 
+<h2>:airplane: 시연영상</h2>
+
+https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/7e103fc2-5876-473b-985f-3d6eb5744cf7
+
 <h2>:airplane:회고 </h2>
 
  - 🦖이동혁 :  
