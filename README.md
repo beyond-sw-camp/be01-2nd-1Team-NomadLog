@@ -209,6 +209,56 @@ AUTO_INCREMENT=109
 
 
 <h2>:airplane: 서비스별 주요 기능 소개</h2>
+<h3>계층 구조 설계</h3>
+```
+C:.
+├─.idea
+├─.mvn
+│  └─wrapper
+├─src
+   ├─main
+      ├─java
+      │  └─com
+      │      └─encore
+      │          └─bbs
+      │              ├─board
+      │              │  ├─controller
+      │              │  ├─dto
+      │              │  ├─mapper
+      │              │  └─service
+      │              ├─chat
+      │              │  ├─config
+      │              │  ├─controller
+      │              │  ├─model
+      │              │  ├─repository
+      │              │  └─service
+      │              ├─comment
+      │              │  ├─controller
+      │              │  ├─dto
+      │              │  ├─mapper
+      │              │  └─service
+      │              ├─config
+      │              └─member
+      │                  ├─controller
+      │                  ├─dto
+      │                  ├─handler
+      │                  ├─mapper
+      │                  └─service
+      └─resources
+          ├─mapper
+          ├─static
+          │  ├─css
+          │  ├─images
+          │  │  └─main
+          │  └─js
+          └─templates
+              ├─bbs
+              ├─chat
+              ├─common
+              │  ├─fragments
+              │  └─layout
+              └─member
+```
 
 - ### member
 - ### Board
@@ -234,53 +284,3 @@ https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/7e103
    
  - 🐥고라희 :
    
-
-```
-C:.
-├─.idea
-├─.mvn
-│  └─wrapper
-├─src
-│  ├─main
-│  │  ├─java
-│  │  │  └─com
-│  │  │      └─encore
-│  │  │          └─bbs
-│  │  │              ├─board
-│  │  │              │  ├─controller
-│  │  │              │  ├─dto
-│  │  │              │  ├─mapper
-│  │  │              │  └─service
-│  │  │              ├─chat
-│  │  │              │  ├─config
-│  │  │              │  ├─controller
-│  │  │              │  ├─model
-│  │  │              │  ├─repository
-│  │  │              │  └─service
-│  │  │              ├─comment
-│  │  │              │  ├─controller
-│  │  │              │  ├─dto
-│  │  │              │  ├─mapper
-│  │  │              │  └─service
-│  │  │              ├─config
-│  │  │              └─member
-│  │  │                  ├─controller
-│  │  │                  ├─dto
-│  │  │                  ├─handler
-│  │  │                  ├─mapper
-│  │  │                  └─service
-│  │  └─resources
-│  │      ├─mapper
-│  │      ├─static
-│  │      │  ├─css
-│  │      │  ├─images
-│  │      │  │  └─main
-│  │      │  └─js
-│  │      └─templates
-│  │          ├─bbs
-│  │          ├─chat
-│  │          ├─common
-│  │          │  ├─fragments
-│  │          │  └─layout
-│  │          └─member
-```
