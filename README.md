@@ -1,3 +1,6 @@
+
+![image](C:\Users\이동혁\Downloads\제목을-입력해주세요_-001.png)
+
 NomadLog
 1팀 - 이동혁, 이경민, 박민성, 박재린, 고라희
 
