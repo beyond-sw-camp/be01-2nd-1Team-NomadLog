@@ -19,6 +19,7 @@ NomadLog
 <h2>:airplane: 서비스별 주요 기능 소개</h2>
 
 <h2>:airplane:회고 </h2>
+
  - 🦖이동혁 :  
  
  - 🐙이경민 :
