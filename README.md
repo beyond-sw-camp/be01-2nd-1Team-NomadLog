@@ -8,6 +8,7 @@
 ![image](https://img.shields.io/badge/java-C71A36.svg?style=for-the-badge&logoColor=white)
 ![image](https://img.shields.io/badge/Mybatis-000000.svg?style=for-the-badge&logoColor=white)
 ![image](https://img.shields.io/badge/websoket-ECD53F.svg?style=for-the-badge&logoColor=white)
+![image](https://img.shields.io/badge/html5-E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 
 NomadLog
 1팀 - 🦖이동혁, 🐙이경민, 🐋박민성, 🐰박재린, 🐥고라희
