@@ -3,7 +3,7 @@
 
 ![image](https://img.shields.io/badge/mariadb-003545.svg?style=for-the-badge&logo=mariadb&logoColor=white)
 ![image](https://img.shields.io/badge/SpringBoot-6DB33F.svg?style=for-the-badge&logo=SpringBoot&logoColor=white)
-![image](https://img.shields.io/badge/apachemaven-C71A36.svg?style=for-the-badge&logo=apachemaven&logoColor=white)
+![image](https://img.shields.io/badge/maven-C71A36.svg?style=for-the-badge&logo=apachemaven&logoColor=white)
 ![image](https://img.shields.io/badge/junit5-25A162.svg?style=for-the-badge&logo=junit5&logoColor=white)
 ![image](https://img.shields.io/badge/java-C71A36.svg?style=for-the-badge&logoColor=white)
 ![image](https://img.shields.io/badge/Mybatis-000000.svg?style=for-the-badge&logoColor=white)
