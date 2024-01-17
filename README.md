@@ -1,5 +1,5 @@
 
-![image](https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/02b57f93-ade4-442f-8022-e57f471c0d32)
+[![image](https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/02b57f93-ade4-442f-8022-e57f471c0d32)](https://velog.velcdn.com/images/ldh0308/post/24a802dd-fcb1-4e3c-9925-c7a0ead68456/image.png)
 
 
 
