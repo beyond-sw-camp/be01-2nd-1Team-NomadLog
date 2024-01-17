@@ -59,6 +59,8 @@
 
 <h4>프로젝트 시나리오</h4>
 
+<h4>프로젝트 설계</h4>
+
 <h2>:airplane: 요구사항 정의</h2>
 
 <p align="center", width=100%>	
