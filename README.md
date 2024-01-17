@@ -5,7 +5,7 @@
 ![image](https://img.shields.io/badge/SpringBoot-6DB33F.svg?style=for-the-badge&logo=SpringBoot&logoColor=white)
 ![image](https://img.shields.io/badge/apachemaven-C71A36.svg?style=for-the-badge&logo=apachemaven&logoColor=white)
 ![image](https://img.shields.io/badge/junit5-25A162.svg?style=for-the-badge&logo=junit5&logoColor=white)
-![image](https://img.shields.io/badge/java-25A162.svg?style=for-the-badge&logoColor=white)
+![image](https://img.shields.io/badge/java-C71A36.svg?style=for-the-badge&logoColor=white)
 
 NomadLog
 1팀 - 🦖이동혁, 🐙이경민, 🐋박민성, 🐰박재린, 🐥고라희
