@@ -1,7 +1,7 @@
 
 ![image](https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/16651570-f48c-4724-896d-87402a130c19)
 
-https://img.shields.io/badge/mariadb-003545.svg?style=for-the-badge&logo=mariadb&logoColor=white
+![image](https://img.shields.io/badge/mariadb-003545.svg?style=for-the-badge&logo=mariadb&logoColor=white)
 
 NomadLog
 1팀 - 🦖이동혁, 🐙이경민, 🐋박민성, 🐰박재린, 🐥고라희
