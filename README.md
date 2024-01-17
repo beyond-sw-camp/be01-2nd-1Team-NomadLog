@@ -28,12 +28,15 @@
 	<img src="https://img.shields.io/badge/Eclipse%20IDE-2C2255?style=flat&logo=EclipseIDE&logoColor=white" />
 	<img src="https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=flat&logo=intellij-idea&logoColor=white" />
 	<img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white" />
+	<img src="https://img.shields.io/badge/apache-%23D42029.svg?style=flat&logo=apache&logoColor=white" />
 </div>
+<br>
+<br>
 
-
-
+<div align=center>
 NomadLog
 1팀 - 🦖이동혁, 🐙이경민, 🐋박민성, 🐰박재린, 🐥고라희
+</div>
 
 <h2>:airplane:프로젝트 소개</h2>
 
