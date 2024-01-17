@@ -1,5 +1,5 @@
 
-![image]([https://velog.velcdn.com/images/ldh0308/post/03547d5b-2a9c-4035-9d60-563cc0fda82c/image.png](https://velog.velcdn.com/images/ldh0308/post/ee1a34e9-01f1-4358-ab9a-55e14baa380e/image.png))
+![image](https://velog.velcdn.com/images/ldh0308/post/ee1a34e9-01f1-4358-ab9a-55e14baa380e/image.png)
 
 NomadLog
 1팀 - 이동혁, 이경민, 박민성, 박재린, 고라희
