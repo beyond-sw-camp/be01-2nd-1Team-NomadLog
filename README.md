@@ -216,8 +216,8 @@ C:.
 ├─.idea
 ├─.mvn
 │  └─wrapper
-├─src
-   ├─main
+└─src
+   └─main
       ├─java
       │  └─com
       │      └─encore
