@@ -210,6 +210,7 @@ AUTO_INCREMENT=109
 
 <h2>:airplane: 서비스별 주요 기능 소개</h2>
 <h3>계층 구조 설계</h3>
+
 ```
 C:.
 ├─.idea
