@@ -1,13 +1,13 @@
 
 ![image](https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/16651570-f48c-4724-896d-87402a130c19)
 <br>
+<br>
 
 <div align=center>
 NomadLog
 1팀 - 🦖이동혁, 🐙이경민, 🐋박민성, 🐰박재린, 🐥고라희
 </div>
-<br>
-<br>
+
 <br>
 
 <div align=center>
