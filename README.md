@@ -98,8 +98,9 @@
 </p>
 
 ## - Data Definition Language (DDL)
-
-* 유저(member) 테이블 생성
+<details>
+<summary>유저(member) 테이블 생성</summary>
+	
 ```sql
 CREATE TABLE `userstbl` (
 	`member_code` INT(11) NOT NULL AUTO_INCREMENT,
@@ -117,7 +118,10 @@ ENGINE=InnoDB
 AUTO_INCREMENT=52
 ;
 ```
-* bbs 테이블 생성
+</details>
+<details>
+<summary>게시물 테이블 생성</summary>
+	
 ```sql
 CREATE TABLE `bbs` (
 	`bbs_id` INT(50) NOT NULL AUTO_INCREMENT,
@@ -141,7 +145,11 @@ ENGINE=InnoDB
 AUTO_INCREMENT=174
 ;
 ```
-* 댓글 테이블 생성
+</details>
+
+<details>
+<summary>댓글 테이블 생성</summary>
+	
 ```sql
 CREATE TABLE `comment` (
 	`comment_id` INT(50) NOT NULL AUTO_INCREMENT,
@@ -160,7 +168,11 @@ ENGINE=InnoDB
 AUTO_INCREMENT=94
 ;
 ```
-* 국가가 테이블 생성
+</details>
+
+<details>
+<summary>국가 테이블 생성</summary>
+	
 ```sql
 CREATE TABLE `countries` (
 	`country_id` INT(50) NOT NULL AUTO_INCREMENT,
@@ -173,7 +185,11 @@ ENGINE=InnoDB
 AUTO_INCREMENT=250
 ;
 ```
-* Hashtag 테이블 생성
+</details>
+
+<details>
+<summary>Hashtag 테이블 생성</summary>
+
 ```sql
 CREATE TABLE `hashtag` (
 	`hashtag_id` INT(11) NOT NULL AUTO_INCREMENT,
@@ -189,6 +205,7 @@ ENGINE=InnoDB
 AUTO_INCREMENT=109
 ;
 ```
+</details>
 
 
 <h2>:airplane: 서비스별 주요 기능 소개</h2>
