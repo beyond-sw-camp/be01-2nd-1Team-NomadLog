@@ -79,8 +79,10 @@
 ## - Entity Relationship Diagram (ER Diagram)
  
 
-<p align="center" width="80%" height="80%">
-  <img src="https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/dfeb3db6-3c3c-43b9-bb60-6d3bb47c0ead">
+
+
+<p align="center">
+  <img src="https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/dfeb3db6-3c3c-43b9-bb60-6d3bb47c0ead" width="50" height="50">
 </p>
 
 ## - Entity Relationship Diagram (ERD)
