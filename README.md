@@ -53,7 +53,7 @@
 
 다양한 사람들과 함께 채팅하며 정보를 공유해봐요 :)  
 
-<h2>:airplane:팀원 소개</h2>
+<h2>:blush:팀원 소개</h2>
 <div align=center>
 	<img src="https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/4087f048-7e9a-464a-92fb-79849b862ff8"/>
 </div>
@@ -61,7 +61,7 @@
 <h2>:airplane:프로젝트 기간</h2>
 12/18/23~01/17/24
 
-<h2>:airplane:프로젝트 개요</h2>
+<h2>:floppy_disk:프로젝트 개요</h2>
 <h4>:small_blue_diamond:아이디어 기획</h4>
 
 ![iOS 이미지](https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/148880521/1bf9cb85-c073-4cd4-bce8-7b718b49f5e9)
@@ -74,7 +74,7 @@
 
 <h4>:small_blue_diamond:프로젝트 설계</h4>
 
-<h2>:airplane: 요구사항 정의</h2>
+<h2>:gift: 요구사항 정의</h2>
 
 <p align="center", width=100%>	
 <img src="https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/148880521/9ef35b56-72d1-4d82-b5b8-c10d0e408a2c" width="40%">
@@ -134,7 +134,7 @@
 
 
 
-<h2>:airplane: DB 모델링</h2>
+<h2>:wrench: DB 모델링</h2>
 
 ## - Entity Relationship Diagram (ER Diagram)
  
