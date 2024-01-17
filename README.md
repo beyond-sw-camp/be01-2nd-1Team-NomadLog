@@ -59,6 +59,10 @@
 12/18/23~01/17/24
 
 <h2>:airplane:프로젝트 개요</h2>
+<h4>:small_blue_diamond:아이디어 기획</h4>
+
+![iOS 이미지](https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/148880521/1bf9cb85-c073-4cd4-bce8-7b718b49f5e9)
+
 <h4>:small_blue_diamond:프로젝트 시나리오</h4>
 <p align="center">
   <img src="https://github.com/beyond-sw-camp/be03-1st-6team-muse/assets/148880521/8ae897eb-1fc9-471b-8f72-ce01d4034bc1">
