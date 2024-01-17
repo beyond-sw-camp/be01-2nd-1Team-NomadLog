@@ -66,8 +66,7 @@ NomadLog
 
 <h2>:airplane: DB 모델링</h2>
 
-![image](https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/148880521/f5683c08-860d-43e0-94e6-e1182d299c61)
-
+![image](https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/148880521/a8aea973-c9d0-4d88-9459-19bab24b7b55)
 
 <h2>:airplane: 서비스별 주요 기능 소개</h2>
 
