@@ -80,8 +80,8 @@
 <img src="https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/148880521/9ef35b56-72d1-4d82-b5b8-c10d0e408a2c" width="40%">
 <img src="https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/148880521/335b1a1b-dba6-422d-b6f7-01c26a844d8c" width="40%">
 </p>
-<details>
-<h3><summary>요구사항 분석서</summary></h3>
+
+<h3>요구사항 분석서</h3>
 
 작성자 (이 플랫폼을 이용하는 사용자)
  
@@ -132,7 +132,7 @@
 5. 프로필 정보:
 사용자 프로필 정보 확인 가능.  
 
-</details>
+
 
 <h2>:airplane: DB 모델링</h2>
 
