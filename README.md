@@ -264,8 +264,10 @@ C:.
 - ### member
 - ### Board
 - ### Comment
-- ### HashTag
--  ### Chat
+- ### Country&HashTag
+  Country : 게시글 내에 자신이 다녀온 여행 국가 선택 시, 대륙과 함께 정보 저장하기 <br>
+  HashTag : 자신의 게시글에 다양한 키워드로 본인의 게시글 표현하기
+- ### Chat
 
 <h2>:airplane: 시연영상</h2>
 
