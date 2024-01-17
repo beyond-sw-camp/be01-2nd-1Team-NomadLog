@@ -11,7 +11,7 @@
 <br>
 
 <div align=center>
-	<h3>📚 Tech Stack 📚</h3>
+	<h2>📚 Tech Stack 📚</h2>
 	<p>✨ Platforms & Languages ✨</p>
 </div>
 <div align="center">
@@ -31,7 +31,7 @@
 </div>
 <br>
 <div align=center>
-	<p>🛠 Tools 🛠</p>
+	<h2>🛠 Tools 🛠</h2>
 </div>
 <div align=center>
 	<img src="https://img.shields.io/badge/Eclipse%20IDE-2C2255?style=flat&logo=EclipseIDE&logoColor=white" />
