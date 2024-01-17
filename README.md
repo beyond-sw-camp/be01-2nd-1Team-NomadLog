@@ -68,7 +68,7 @@
 
 <h2>:airplane: DB 모델링</h2>
 
-<span style="font-size:200%"> Entity Relationship Diagram (ER Diagram)</span>
+## - Entity Relationship Diagram (ER Diagram)
  
 
   
