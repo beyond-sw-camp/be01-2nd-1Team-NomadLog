@@ -11,7 +11,7 @@
 <br>
 
 <div align=center>
-	<h3>📚 Tech Stack 📚</h3>
+	<h4>📚 Tech Stack 📚</h4>
 	<p>✨ Platforms & Languages ✨</p>
 </div>
 <div align="center">
