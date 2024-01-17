@@ -59,13 +59,13 @@
 12/18/23~01/17/24
 
 <h2>:airplane:프로젝트 개요</h2>
-<h4>프로젝트 시나리오</h4>
+<h4>:small_blue_diamond:프로젝트 시나리오</h4>
 <p align="center">
   <img src="https://github.com/beyond-sw-camp/be03-1st-6team-muse/assets/148880521/8ae897eb-1fc9-471b-8f72-ce01d4034bc1">
 </p>
 
 
-<h4>프로젝트 설계</h4>
+<h4>:small_blue_diamond:프로젝트 설계</h4>
 
 <h2>:airplane: 요구사항 정의</h2>
 
