@@ -94,6 +94,97 @@
   <img src="https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/148880521/a8aea973-c9d0-4d88-9459-19bab24b7b55">
 </p>
 
+## - Data Definition Language (DDL)
+
+* 유저(member) 테이블 생성
+```sql
+CREATE TABLE `userstbl` (
+	`member_code` INT(11) NOT NULL AUTO_INCREMENT,
+	`member_id` VARCHAR(15) NOT NULL COLLATE 'utf8mb4_general_ci',
+	`member_password` VARCHAR(15) NOT NULL COLLATE 'utf8mb4_general_ci',
+	`member_name` VARCHAR(10) NOT NULL COLLATE 'utf8mb4_general_ci',
+	`member_email` VARCHAR(30) NOT NULL COLLATE 'utf8mb4_general_ci',
+	`member_age` INT(11) NOT NULL,
+	PRIMARY KEY (`member_code`) USING BTREE,
+	UNIQUE INDEX `member_id` (`member_id`) USING BTREE,
+	UNIQUE INDEX `member_email` (`member_email`) USING BTREE
+)
+COLLATE='utf8mb4_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=52
+;
+```
+* bbs 테이블 생성
+```sql
+CREATE TABLE `bbs` (
+	`bbs_id` INT(50) NOT NULL AUTO_INCREMENT,
+	`title` VARCHAR(255) NULL DEFAULT 'bbs' COLLATE 'utf8mb4_general_ci',
+	`contents` VARCHAR(1000) NOT NULL COLLATE 'utf8mb4_general_ci',
+	`created_at` TIMESTAMP NULL DEFAULT current_timestamp(),
+	`modify_at` TIMESTAMP NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+	`view_cnt` INT(50) NULL DEFAULT '0',
+	`like_cnt` INT(11) NULL DEFAULT '0',
+	`hashtag_id` INT(11) NULL DEFAULT '0',
+	`is_deleted` TINYINT(1) NULL DEFAULT '0',
+	`member_code` INT(11) NULL DEFAULT '0',
+	`country_id` INT(11) NULL DEFAULT '1',
+	PRIMARY KEY (`bbs_id`) USING BTREE,
+	INDEX `country_id` (`country_id`) USING BTREE,
+	CONSTRAINT `country_id` FOREIGN KEY (`country_id`) REFERENCES
+		`countries` (`country_id`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+COLLATE='utf8mb4_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=174
+;
+```
+* 댓글 테이블 생성
+```sql
+CREATE TABLE `comment` (
+	`comment_id` INT(50) NOT NULL AUTO_INCREMENT,
+	`bbs_id` INT(50) NOT NULL DEFAULT '0',
+	`content` VARCHAR(500) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`writer` VARCHAR(50) NOT NULL DEFAULT '0' COLLATE 'utf8mb4_general_ci',
+	`reg_date` TIMESTAMP NULL DEFAULT NULL,
+	`modify_date` TIMESTAMP NULL DEFAULT NULL,
+	PRIMARY KEY (`comment_id`) USING BTREE,
+	INDEX `bbs_id` (`bbs_id`) USING BTREE,
+	CONSTRAINT `bbs` FOREIGN KEY (`bbs_id`) REFERENCES `bbs` (`bbs_id`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+COLLATE='utf8mb4_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=94
+;
+```
+* 국가가 테이블 생성
+```sql
+CREATE TABLE `countries` (
+	`country_id` INT(50) NOT NULL AUTO_INCREMENT,
+	`country_name` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`continent_name` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	PRIMARY KEY (`country_id`) USING BTREE
+)
+COLLATE='utf8mb4_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=250
+;
+```
+* Hashtag 테이블 생성
+```sql
+CREATE TABLE `hashtag` (
+	`hashtag_id` INT(11) NOT NULL AUTO_INCREMENT,
+	`bbs_id` INT(11) NULL DEFAULT NULL,
+	`content` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb3_bin',
+	PRIMARY KEY (`hashtag_id`) USING BTREE,
+	INDEX `bbs_id` (`bbs_id`) USING BTREE,
+	CONSTRAINT `bbs_id` FOREIGN KEY (`bbs_id`) REFERENCES `bbs` (`bbs_id`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+COLLATE='utf8mb4_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=109
+;
+```
+
 
 <h2>:airplane: 서비스별 주요 기능 소개</h2>
 
