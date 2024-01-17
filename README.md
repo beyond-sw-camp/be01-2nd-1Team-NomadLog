@@ -9,11 +9,11 @@ NomadLog
 <h2>:airplane:프로젝트 개요</h2>
 <h4>프로젝트 시나리오</h4>
 
-<h2>:airplane:요구사항 정의</h2>
+<h2>:airplane: 요구사항 정의</h2>
 
-<h2>:airplane:DB 모델링</h2>
+<h2>:airplane: DB 모델링</h2>
 
-<h2>:airplane:서비스별 주요 기능 소개</h2>
+<h2>:airplane: 서비스별 주요 기능 소개</h2>
 
 <h2>:airplane:회고 </h2>
  
