@@ -62,7 +62,10 @@ NomadLog
 
 <h2>:airplane: 요구사항 정의</h2>
 
-![image](https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/148880521/9c1e66cf-1844-4d42-b028-490447a0a83a)
+<p align="center", width=100%>	
+<img src="https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/148880521/9ef35b56-72d1-4d82-b5b8-c10d0e408a2c" width="40%">
+<img src="https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/148880521/335b1a1b-dba6-422d-b6f7-01c26a844d8c" width="40%">
+</p>
 
 <h2>:airplane: DB 모델링</h2>
 
