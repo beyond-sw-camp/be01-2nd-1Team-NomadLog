@@ -55,7 +55,7 @@
 
 <h2>:blush:팀원 소개</h2>
 <div align=center>
-	<img src="https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/4087f048-7e9a-464a-92fb-79849b862ff8"/>
+	<img src="https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/4087f048-7e9a-464a-92fb-79849b862ff8" width="100%">
 </div>
 
 <h2>:airplane:프로젝트 기간</h2>
@@ -68,7 +68,7 @@
 
 <h4>:small_blue_diamond:프로젝트 시나리오</h4>
 <p align="center">
-  <img src="https://github.com/beyond-sw-camp/be03-1st-6team-muse/assets/148880521/8ae897eb-1fc9-471b-8f72-ce01d4034bc1">
+  <img src="https://github.com/beyond-sw-camp/be03-1st-6team-muse/assets/148880521/8ae897eb-1fc9-471b-8f72-ce01d4034bc1" width="100%">
 </p>
 
 
