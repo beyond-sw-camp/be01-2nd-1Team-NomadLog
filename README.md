@@ -332,6 +332,13 @@ C:.
 - ### Chat
   원하는 게시글에 들어가서 여러사람과 대화 가능하도록 채팅방 생성
 
+
+<h2>:airplane: QA</h2>
+
+![image](https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/148880521/cba9aec0-b121-47d6-bbdf-57d9d4ff3474)
+
+
+
 <h2>:airplane: 시연영상</h2>
 
 https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/7e103fc2-5876-473b-985f-3d6eb5744cf7
