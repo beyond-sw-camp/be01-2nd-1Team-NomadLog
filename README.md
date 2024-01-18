@@ -314,6 +314,11 @@ C:.
               └─member
 ```
 
+<h3>클래스 간 관계도</h3>
+
+![스크린샷 2024-01-15 110614](https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/8e148677-4c3b-4ba9-ac8d-05628e840e87)
+
+
 - ### member
   회원정보 관리와 로그인 기능을 구현하여, 게시글 접근 권한을 설정
 - ### Board
