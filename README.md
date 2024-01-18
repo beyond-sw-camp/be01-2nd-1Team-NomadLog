@@ -336,7 +336,13 @@ C:.
 
 https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/142721325/7e103fc2-5876-473b-985f-3d6eb5744cf7
 
+- #### 채팅방 구현 영상
+https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/148880521/b15accff-5dab-4408-873d-c1a6222b50b2
+
+
 <a href=https://youtu.be/nnAxKG7k-_E> 720p 보기 </a>
+
+
 
 <h2>:airplane: 개선사항</h2>
 
