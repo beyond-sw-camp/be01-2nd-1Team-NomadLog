@@ -73,7 +73,11 @@
 
 
 <h4>:small_blue_diamond:프로젝트 설계</h4>
-
+<br>
+시스템웨어 아키텍쳐
+<p align="center">
+<img src="https://github.com/beyond-sw-camp/be01-2nd-1Team-NomadLog/assets/148875683/52d25827-4f1a-4753-9ddb-9371ab8fde41">
+</p>
 <h2>:gift: 요구사항 정의</h2>
 
 <p align="center", width=100%>	
